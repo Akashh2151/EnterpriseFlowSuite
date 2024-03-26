@@ -154,14 +154,15 @@ def login():
                 userinfo={
                        "name":user.username,
                         "mobile":user.phone,   
-                        'identity': user.email
+                        'identity': user.email,
+                        'accessToken': token
                 }
 
                 return jsonify({
                     "body": userinfo,
                     'message': 'Login successfully',
                     'status': 'success',
-                    'accessToken': token,
+             
                     'expires': exp_time.strftime('%Y-%m-%d %H:%M:%S'),
                     'statusCode': 200
                 }), 200

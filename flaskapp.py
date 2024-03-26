@@ -3,7 +3,7 @@ from controller.user_controller import usermanagment
 from controller.auth_controller import auth_bp
 from controller.bizinfo_controller import business_info_bp
 from controller.customer_controller import cust_db
-
+from controller.invoices_controller import  invoice_db
 
 
 app=Flask(__name__)
@@ -12,6 +12,7 @@ app.register_blueprint(usermanagment)
 app.register_blueprint(auth_bp)
 app.register_blueprint(business_info_bp)
 app.register_blueprint(cust_db)
+app.register_blueprint(invoice_db)
 
 
 @app.route('/')
