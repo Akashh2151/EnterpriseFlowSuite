@@ -98,7 +98,7 @@ def register_step1():
 
 
 
-EXPECTED_ENCRYPTION_KEY = "9f8b47de-5c1a-4a6b-8d92-d67c43f7a6c4"
+# EXPECTED_ENCRYPTION_KEY = "9f8b47de-5c1a-4a6b-8d92-d67c43f7a6c4"
 # # login route
 @auth_bp.route('/v1/api/users/login', methods=['POST'])
 def login():
@@ -118,11 +118,11 @@ def login():
             return jsonify({'body':{},'message': str(e),'status': 'error','statusCode': 500}), 500
         
      # Extract the custom encryption key from the request headers
-    encryption_key = request.headers.get('X-Custom-Encryption-Key')
+    # encryption_key = request.headers.get('X-Custom-Encryption-Key')
 
     # Verify the encryption key
-    if encryption_key != EXPECTED_ENCRYPTION_KEY:
-        return jsonify({'body':{},'message': "Invalid or missing encryption key", "status": "error", "statusCode": 401}), 200
+    # if encryption_key != EXPECTED_ENCRYPTION_KEY:
+    #     return jsonify({'body':{},'message': "Invalid or missing encryption key", "status": "error", "statusCode": 401}), 200
 
     try:
         data = request.json
